@@ -1,0 +1,37 @@
+-{vLib}=
+-L ExtLib/
+-lssl
+-lcrypto
+-lws2_32
+>
+-{vFlag}=
+-DLIBSSH2_OPENSSL
+;-D_PLATFORM_WINDOWS
+>
+-{vIncl}=
+-I ../include/
+-I ../win32/
+-I ExtLib/include/
+>
+;Build ssh2
+-c ../src/ -o obj/cpp_{_sPlatform}_{_sOpt}/lib/ssh2/
+-{vIncl}
+-{vFlag}
+>
+;Generate Dynamic Lib
+-o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/ssh2.{_sDynamic}
+-{vLib}
+>
+;Generate Static Lib
+-o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/libssh2.a
+>
+;Build Test ssh2
+-c ../tests/ssh2.c -o obj/cpp_{_sPlatform}_{_sOpt}/tests/ssh2.o
+-{vIncl}
+-{vFlag}
+>
+;Generate executable
+-o obj/cpp_{_sPlatform}_{_sOpt}/ -#To _out/{_sPlatform}_{_sOpt}/App.*
+-{vLib}
+>
+-#Run
