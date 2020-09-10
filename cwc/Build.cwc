@@ -6,7 +6,8 @@
 >
 -{vFlag}=
 -DLIBSSH2_OPENSSL
-;-D_PLATFORM_WINDOWS
+-DLIBSSH2_WIN32 
+-DHAVE_WINDOWS_H 
 >
 -{vIncl}=
 -I ../include/
