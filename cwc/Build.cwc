@@ -27,7 +27,7 @@
 -o obj/cpp_{_sPlatform}_{_sOpt}/lib/ -#To Lib/{_sPlatform}_{_sOpt}/libssh2.a
 >
 ;Build Test ssh2
--c ../tests/ssh2.c -o obj/cpp_{_sPlatform}_{_sOpt}/tests/ssh2.o
+-c ../example/ssh2_echo.c -o obj/cpp_{_sPlatform}_{_sOpt}/example/ssh2_echo.o
 -{vIncl}
 -{vFlag}
 >
